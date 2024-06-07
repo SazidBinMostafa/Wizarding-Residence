@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 import logo from "/Wizarding_World_Logo.png"
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
 
 function Header() {
-    const NavLinks = () =>{
+    const { user, logOut } = useContext(AuthContext);
+
+    const logOutUser = () =>{
+        logOut()
+    }
+
+    const NavLinks = () => {
         return <>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
@@ -28,9 +36,26 @@ function Header() {
                     <NavLinks></NavLinks>
                 </ul>
             </div>
-            <div className="navbar-end">
-                <Link to="/login" className="btn">Login</Link>
-            </div>
+            {user ?
+                <div className="navbar-end">
+                    <div className="dropdown dropdown-end">
+                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                        <div className="w-10 rounded-full">
+                            <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        </div>
+                    </div>
+                    <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                        <li><a>Profile</a></li>
+                        <li><a>Settings</a></li>
+                        <li onClick={logOutUser}><a>Logout</a></li>
+                    </ul>
+                </div>
+                </div>
+                :
+                <div className="navbar-end">
+                    <Link to="/login" className="btn">Login</Link>
+                </div>
+            }
         </div>
     </>
 }
