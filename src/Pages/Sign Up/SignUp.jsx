@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
-import { FaGoogle } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -10,7 +9,19 @@ function SignUp() {
     const [password, setPassword] = useState(null);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
-    const { createUser, updateName } = useContext(AuthContext);
+    const { createUser, updateName, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(res => console.log(res))
+            .catch(error => console.log(error))
+    }
+
+    const handleGithubSignIn = () => {
+        signInWithGithub()
+            .then(res => console.log(res))
+            .catch(error => console.log(error))
+    }
 
     const handleName = (e) => {
         const nameInput = e.target.value;
@@ -36,17 +47,17 @@ function SignUp() {
                 e.target.reset();
                 setError(null)
                 updateName(name)
-                .then(res=> console.log(res))
-                .catch(error=> console.log(error))
+                    .then(res => console.log(res))
+                    .catch(error => console.log(error))
             })
             .catch(error => {
-                if(error.message === "Firebase: Error (auth/email-already-in-use)."){
+                if (error.message === "Firebase: Error (auth/email-already-in-use).") {
                     setError("Ooops! Email already in use.")
                 }
-                else if(error.message === "Firebase: Password should be at least 6 characters (auth/weak-password)."){
+                else if (error.message === "Firebase: Password should be at least 6 characters (auth/weak-password).") {
                     setError("Password should be at least 6 characters.")
                 }
-                else{
+                else {
                     setError(error.message)
                 }
             })
@@ -55,36 +66,40 @@ function SignUp() {
 
     return <>
         <h1 className="font-bold text-5xl text-center mb-8">Sign Up</h1>
-        <form onSubmit={handleSubmit} className="card-body md:w-96 mx-auto bg-gray-300 rounded-3xl mb-14">
-            <div className="form-control">
-                <label className="label">
-                    <span className="label-text">Name</span>
-                </label>
-                <input onChange={handleName} type="text" placeholder="Your Name" className="input input-bordered" required />
+        <div className=" md:w-96 mx-auto bg-gray-300 rounded-3xl mb-14">
+            <form onSubmit={handleSubmit} className="card-body">
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Name</span>
+                    </label>
+                    <input onChange={handleName} type="text" placeholder="Your Name" className="input input-bordered" required />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Email</span>
+                    </label>
+                    <input onChange={handleEmail} type="email" placeholder="Your Email" className="input input-bordered" required />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Password</span>
+                    </label>
+                    <input onChange={handlePassword} type="password" placeholder="Your Password" className="input input-bordered" required />
+                    {error && <p className="text-red-500 mt-3">{error}</p>}
+                </div>
+                <div className="form-control mt-6">
+                    <button className="btn btn-neutral">Sign Up</button>
+                </div>
+                <p>Already have an account? <Link className="text-blue-800" to="/login">Login here!</Link></p>
+            </form>
+            <div className="flex items-center">
+                <hr className="w-full" /><span className="mx-5">or</span> <hr className="w-full" />
             </div>
-            <div className="form-control">
-                <label className="label">
-                    <span className="label-text">Email</span>
-                </label>
-                <input onChange={handleEmail} type="email" placeholder="Your Email" className="input input-bordered" required />
+            <div className="flex flex-col gap-5 card-body">
+                <button onClick={handleGoogleSignIn} className="btn btn-outline w-full"><FaGoogle />Continue with Google</button>
+                <button onClick={handleGithubSignIn} className="btn btn-outline w-full"><FaGithub />Continue with Github</button>
             </div>
-            <div className="form-control">
-                <label className="label">
-                    <span className="label-text">Password</span>
-                </label>
-                <input onChange={handlePassword} type="password" placeholder="Your Password" className="input input-bordered" required />
-                {error && <p className="text-red-500 mt-3">{error}</p>}
-            </div>
-            <div className="form-control mt-6">
-                <button className="btn btn-neutral">Sign Up</button>
-            </div>
-            <p>Already have an account? <Link className="text-blue-800" to="/login">Login here!</Link></p>
-            <hr className="my-5" />
-            <div className="flex flex-col gap-5">
-                <button className="btn btn-outline w-full"><FaGoogle />Continue with Google</button>
-                <button className="btn btn-outline w-full"><FaFacebook />Continue with Facebook</button>
-            </div>
-        </form>
+        </div>
     </>
 }
 
