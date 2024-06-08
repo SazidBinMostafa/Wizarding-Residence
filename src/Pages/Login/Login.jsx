@@ -1,12 +1,14 @@
 import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 function Login() {
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
+    const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     const { loginUser } = useContext(AuthContext);
 
@@ -24,8 +26,22 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault()
         loginUser(email, password)
-        .then(res => console.log(res))
-        .catch(error => console.log(error))
+            .then((res) => {
+                navigate('/')
+                e.target.reset();
+                setError(null)
+                console.log(res)
+            })
+            .catch(error => {
+                if(error.message === "Firebase: Error (auth/invalid-credential)."){
+                    setError("Invalid Email or Password")
+                }
+                else{
+                    setError(error.message)
+                }
+            })
+
+
     }
 
 
@@ -46,15 +62,17 @@ function Login() {
                 <label className="label">
                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>
+
+                {error && <p className="text-red-500">{error}</p>}
             </div>
             <div className="form-control mt-6">
                 <button className="btn btn-neutral">Login</button>
             </div>
-            <p>New here? <Link className="text-blue-800" to="/register">Register Now!</Link></p>
+            <p>New here? <Link className="text-blue-800" to="/sign-up">Sign up now!</Link></p>
             <hr className="my-5" />
             <div className="flex flex-col gap-5">
-                <button className="btn btn-outline w-full"><FaGoogle />Login with Google</button>
-                <button className="btn btn-outline w-full"><FaFacebook />Login with Facebook</button>
+                <button className="btn btn-outline w-full"><FaGoogle />Continue with Google</button>
+                <button className="btn btn-outline w-full"><FaFacebook />Continue with Facebook</button>
             </div>
         </form>
     </>
