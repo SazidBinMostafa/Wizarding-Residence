@@ -1,0 +1,18 @@
+[
+    {
+        "img": "/Gryffindor.png",
+        "name": "Gryffindor"
+    },
+    {
+        "img": "/Ravenclaw.png",
+        "name": "Ravenclaw"
+    },
+    {
+        "img": "/Hufflepuff.png",
+        "name": "Hufflepuff"
+    },
+    {
+        "img": "/Slytherin.png",
+        "name": "Slytherin"
+    }
+]

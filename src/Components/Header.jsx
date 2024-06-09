@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "/Wizarding_World_Logo.png"
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
@@ -12,9 +12,9 @@ function Header() {
 
     const NavLinks = () => {
         return <>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/contact-us">Contact Us</Link></li>
+            <li><NavLink className="bg-gray-100" to='/'>Home</NavLink></li>
+            <li><NavLink className="bg-gray-100" to='/about'>About</NavLink></li>
+            <li><NavLink className="bg-gray-100" to='/contact-us'>Contact Us</NavLink></li>
         </>
     }
 
@@ -32,7 +32,7 @@ function Header() {
                 <Link to="/" className="btn btn-ghost text-xl w-32 h-fit"><img src={logo} alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 gap-3">
                     <NavLinks></NavLinks>
                 </ul>
             </div>
