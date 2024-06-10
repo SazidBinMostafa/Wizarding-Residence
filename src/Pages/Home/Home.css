@@ -1,0 +1,12 @@
+#house{
+    position: relative;
+    overflow: hidden;
+}
+
+#house img{
+    transition: transform 0.3s ease;
+}
+
+#house:hover img{
+    transform: scale(1.1);
+}

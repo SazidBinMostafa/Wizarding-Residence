@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./Home.css"
 
 
 function Home() {
@@ -23,18 +24,19 @@ function Home() {
             <img src="/Banner.png" alt="" />
         </div>
         <div className="my-14">
-            <h1 className="text-5xl font-bold text-center mb-8">Select Your House</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-14">Select Your House</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-5 md:mx-8 lg:mx-32">
                 {houses.map((house) => {
                     return <>
-                        <div className="relative flex flex-col items-center justify-center">
+                        <div id="house" className="relative flex flex-col items-center justify-center hover:cursor-pointer  rounded-3xl">
                             <img className="w-full" src={house.img} alt="" />
-                            <h3 className="text-5xl absolute text-center text-white font-bold">{house.name}</h3>
+                            <h3 className="text-3xl md:text-4xl lg:text-5xl absolute text-center text-white font-bold">{house.name}</h3>
                         </div>
                     </>
                 })}
             </div>
         </div>
+        
     </>
 }
 
