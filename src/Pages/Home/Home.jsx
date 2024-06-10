@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import "./Home.css"
+import { useNavigate } from "react-router-dom";
 
 
 function Home() {
 
     const [houses, setHouses] = useState([]);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setLoading(true)
@@ -28,7 +30,7 @@ function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-5 md:mx-8 lg:mx-32">
                 {houses.map((house) => {
                     return <>
-                        <div id="house" className="relative flex flex-col items-center justify-center hover:cursor-pointer  rounded-3xl">
+                        <div onClick={()=> navigate(`/house/${house.id}`)} id="house" className="relative flex flex-col items-center justify-center hover:cursor-pointer  rounded-3xl">
                             <img className="w-full" src={house.img} alt="" />
                             <h3 className="text-3xl md:text-4xl lg:text-5xl absolute text-center text-white font-bold">{house.name}</h3>
                         </div>

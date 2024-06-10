@@ -1,17 +1,21 @@
 [
-    {
+    {   
+        "id": 1,
         "img": "/images/Gryffindor.png",
         "name": "Gryffindor"
     },
     {
+        "id": 2,
         "img": "/images/Ravenclaw.png",
         "name": "Ravenclaw"
     },
     {
+        "id": 3,
         "img": "/images/Hufflepuff.png",
         "name": "Hufflepuff"
     },
     {
+        "id": 4,
         "img": "/images/Slytherin.png",
         "name": "Slytherin"
     }

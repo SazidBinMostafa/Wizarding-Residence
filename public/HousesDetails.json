@@ -1,9 +1,10 @@
 [
     {
+        "id": 1,
         "name": "Gryffindor",
         "about": "Home to the brave and the daring, Gryffindor is all about chivalry and nerve. Their colors, a fiery scarlet and gleaming gold, reflect the courage that burns brightly within their hearts. The lion, a symbol of strength and valor, serves as their mascot, perfectly embodying the Gryffindor spirit.",
         "images": {
-            "drawing-rooms": [
+            "drawingRooms": [
                 "/images/Gryffindor/Drawing-Rooms/Gemini_Generated_Image_sbgmmbsbgmmbsbgm.jpg"
             ],
             "bedrooms": [
@@ -13,13 +14,25 @@
             "bathrooms": [
                 "/images/Gryffindor/Bathrooms/Gemini_Generated_Image_osqrunosqrunosqr.jpg"
             ]
-        }
+        },
+        "roomsCount" : {
+            "drawingRooms" : 1,
+            "bedrooms": 2,
+            "bathrooms": 1
+        },
+        "price" : 5000,
+        "status": "Rent",
+        "area": 2000,
+        "location": "Hogwarts, Wizarding World",
+        "facilities" : [ "living room", "swimming pool",
+        "Kitchen"]
     },
     {
+        "id":2,
         "name": "Ravenclaw",
         "about": "For the wise and the witty, Ravenclaw beckons. This house values intelligence, learning, and a thirst for knowledge above all else. Their colors, a cool blue and intelligent bronze, represent depth of thought and a thirst for unraveling life's mysteries. The eagle, with its sharp vision and soaring intellect, is their proud mascot.",
         "images": {
-            "drawing-rooms": [
+            "drawingRooms": [
                 "/images/Ravenclaw/Drawing-Rooms/Gemini_Generated_Image_cbfmxacbfmxacbfm.jpg",
                 "/images/Ravenclaw/Drawing-Rooms/Gemini_Generated_Image_cpbql4cpbql4cpbq.jpg"
             ],
@@ -31,13 +44,25 @@
                 "/images/Ravenclaw/Bathrooms/Gemini_Generated_Image_9n1h549n1h549n1h.jpg",
                 "/images/Ravenclaw/Bathrooms/Gemini_Generated_Image_9n1h559n1h559n1h.jpg"
             ]
-        }
+        },
+        "roomsCount" : {
+            "drawingRooms" : 2,
+            "bedrooms": 2,
+            "bathrooms": 2
+        },
+        "price" : 8000,
+        "status": "Rent",
+        "area": 3000,
+        "location": "Hogwarts, Wizarding World",
+        "facilities" : [ "living room", "swimming pool",
+        "Kitchen"]
     },
-    {
+    {   
+        "id":3,
         "name": "Hufflepuff",
         "about": "Hard work, dedication, and unwavering loyalty are the cornerstones of Hufflepuff. True Hufflepuffs are fair-minded team players, always ready to lend a helping hand. Their warm yellow and earthy black colors symbolize the grounded nature and unwavering commitment that define this house. The badger, a creature known for its perseverance and unwavering spirit, is their mascot.",
         "images": {
-            "drawing-rooms": [
+            "drawingRooms": [
                 "/images/Hufflepuff/Drawing-Rooms/Gemini_Generated_Image_1ip0n1ip0n1ip0n1.jpg"
             ],
             "bedrooms": [
@@ -48,13 +73,25 @@
                 "/images/Hufflepuff/Bathrooms/Gemini_Generated_Image_hq4iwwhq4iwwhq4i.jpg",
                 "/images/Hufflepuff/Bathrooms/Gemini_Generated_Image_hq4iwzhq4iwzhq4i.jpg"
             ]
-        }
+        },
+        "roomsCount" : {
+            "drawingRooms" : 1,
+            "bedrooms": 2,
+            "bathrooms": 2
+        },
+        "price" : 6000,
+        "status": "Rent",
+        "area": 2500,
+        "location": "Hogwarts, Wizarding World",
+        "facilities" : [ "living room", "swimming pool",
+        "Kitchen"]
     },
     {
+        "id": 4,
         "name": "Slytherin",
         "about": "Slytherin, shrouded in an air of mystery, is the house for the ambitious and cunning. They value leadership, resourcefulness, and a determination to achieve their goals. Their colors, emerald green and sleek silver, represent a thirst for power and a strategic mind. The serpent, a symbol of both wisdom and potential danger, is their mascot.",
         "images": {
-            "drawing-rooms": [
+            "drawingRooms": [
                 "/images/Slytherin/Drawing-Rooms/Gemini_Generated_Image_kkx8jnkkx8jnkkx8.jpg",
                 "/images/Slytherin/Drawing-Rooms/Gemini_Generated_Image_ugtv0wugtv0wugtv.jpg"
             ],
@@ -66,6 +103,17 @@
                 "/images/Slytherin/Bathrooms/Gemini_Generated_Image_s9sojds9sojds9so.jpg",
                 "/images/Slytherin/Bathrooms/Gemini_Generated_Image_s9sojes9sojes9so.jpg"
             ]
-        }
+        },
+        "roomsCount" : {
+            "drawingRooms" : 2,
+            "bedrooms": 2,
+            "bathrooms": 2
+        },
+        "price" : 7000,
+        "status": "Rent",
+        "area": 2800,
+        "location": "Hogwarts, Wizarding World",
+        "facilities" : [ "living room", "swimming pool",
+        "Kitchen"]
     }
 ]
