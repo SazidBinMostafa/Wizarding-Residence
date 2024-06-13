@@ -20,18 +20,22 @@ const Carousel = ({ images }) => {
           alt={`Slide ${currentIndex + 1}`}
         />
       </div>
-      <button
-        className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full focus:outline-none"
-        onClick={prevSlide}
-      >
-        &lt;
-      </button>
-      <button
-        className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full focus:outline-none"
-        onClick={nextSlide}
-      >
-        &gt;
-      </button>
+      {
+        images.length > 1 ? <>
+          <button
+            className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full focus:outline-none"
+            onClick={prevSlide}
+          >
+            &lt;
+          </button>
+          <button
+            className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full focus:outline-none"
+            onClick={nextSlide}
+          >
+            &gt;
+          </button>
+        </> : <></>
+      }
     </div>
   );
 };

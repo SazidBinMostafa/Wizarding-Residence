@@ -2,6 +2,7 @@
     {
         "id": 1,
         "name": "Gryffindor",
+        "segmentName": "Magical House",
         "about": "Home to the brave and the daring, Gryffindor is all about chivalry and nerve. Their colors, a fiery scarlet and gleaming gold, reflect the courage that burns brightly within their hearts. The lion, a symbol of strength and valor, serves as their mascot, perfectly embodying the Gryffindor spirit.",
         "images": {
             "drawingRooms": [
@@ -15,21 +16,35 @@
                 "/images/Gryffindor/Bathrooms/Gemini_Generated_Image_osqrunosqrunosqr.jpg"
             ]
         },
-        "roomsCount" : {
-            "drawingRooms" : 1,
-            "bedrooms": 2,
-            "bathrooms": 1
-        },
-        "price" : 5000,
+        "price": 500,
         "status": "Rent",
         "area": 2000,
         "location": "Hogwarts, Wizarding World",
-        "facilities" : [ "living room", "swimming pool",
-        "Kitchen"]
+        "facilities": ["Common Room", "Fireplace", "Library"],
+        "propertyDetails": {
+            "purpose": "Provide a home for the brave and daring wizards.",
+            "residents": {
+                "description": "Gryffindors are known for their bravery, daring nature, and strong moral compass. They are courageous in the face of adversity, often leading the charge in times of crisis. Loyalty and a sense of justice are core values that bind Gryffindors together.",
+                "characteristics": [
+                    "Bravery",
+                    "Courage",
+                    "Chivalry",
+                    "Loyalty",
+                    "Nerve"
+                ]
+            },
+            "chairman": "Professor Minerva McGonagall",
+            "history": "Founded by Godric Gryffindor, known for his bravery and courage, Gryffindor house values chivalry, nerve, and daring. The Sorting Hat sees bravery as its foremost trait, making Gryffindors renowned for their boldness and loyalty."
+        },
+        "additionalProperties": {
+            "mascot": "Lion",
+            "colors": ["Scarlet", "Gold"]
+        }
     },
     {
-        "id":2,
+        "id": 2,
         "name": "Ravenclaw",
+        "segmentName": "Magical House",
         "about": "For the wise and the witty, Ravenclaw beckons. This house values intelligence, learning, and a thirst for knowledge above all else. Their colors, a cool blue and intelligent bronze, represent depth of thought and a thirst for unraveling life's mysteries. The eagle, with its sharp vision and soaring intellect, is their proud mascot.",
         "images": {
             "drawingRooms": [
@@ -45,21 +60,35 @@
                 "/images/Ravenclaw/Bathrooms/Gemini_Generated_Image_9n1h559n1h559n1h.jpg"
             ]
         },
-        "roomsCount" : {
-            "drawingRooms" : 2,
-            "bedrooms": 2,
-            "bathrooms": 2
-        },
-        "price" : 8000,
+        "price": 800,
         "status": "Rent",
         "area": 3000,
         "location": "Hogwarts, Wizarding World",
-        "facilities" : [ "living room", "swimming pool",
-        "Kitchen"]
+        "facilities": ["Library", "Common Room", "Secret Passages"],
+        "propertyDetails": {
+            "purpose": "Foster an environment of learning and wisdom.",
+            "residents": {
+                "description": "Ravenclaws are characterized by their sharp intellect, wit, and love for learning. They value creativity and originality, often pursuing ambitious goals with a thirst for knowledge. Known for their curiosity, Ravenclaws thrive in environments that encourage intellectual exploration.",
+                "characteristics": [
+                    "Intelligence",
+                    "Wit",
+                    "Curiosity",
+                    "Creativity",
+                    "Wisdom"
+                ]
+            },
+            "chairman": "Professor Filius Flitwick",
+            "history": "Founded by Rowena Ravenclaw, this house values wit, learning, and wisdom. The Sorting Hat values intelligence and wit in Ravenclaws, known for their creativity and pursuit of knowledge."
+        },
+        "additionalProperties": {
+            "mascot": "Eagle",
+            "colors": ["Blue", "Bronze"]
+        }
     },
-    {   
-        "id":3,
+    {
+        "id": 3,
         "name": "Hufflepuff",
+        "segmentName": "Magical House",
         "about": "Hard work, dedication, and unwavering loyalty are the cornerstones of Hufflepuff. True Hufflepuffs are fair-minded team players, always ready to lend a helping hand. Their warm yellow and earthy black colors symbolize the grounded nature and unwavering commitment that define this house. The badger, a creature known for its perseverance and unwavering spirit, is their mascot.",
         "images": {
             "drawingRooms": [
@@ -74,21 +103,35 @@
                 "/images/Hufflepuff/Bathrooms/Gemini_Generated_Image_hq4iwzhq4iwzhq4i.jpg"
             ]
         },
-        "roomsCount" : {
-            "drawingRooms" : 1,
-            "bedrooms": 2,
-            "bathrooms": 2
-        },
-        "price" : 6000,
+        "price": 600,
         "status": "Rent",
         "area": 2500,
         "location": "Hogwarts, Wizarding World",
-        "facilities" : [ "living room", "swimming pool",
-        "Kitchen"]
+        "facilities": ["Fireplace", "Library", "Common Room"],
+        "propertyDetails": {
+            "purpose": "Create a home for hard-working, loyal, and fair-minded wizards.",
+            "residents": {
+                "description": "Hufflepuffs are known for their dedication, patience, and inclusive nature. They value fairness, loyalty, and a strong sense of community. Hufflepuffs excel in collaborative environments, often striving for excellence through hard work and perseverance.",
+                "characteristics": [
+                    "Dedication",
+                    "Patience",
+                    "Fairness",
+                    "Loyalty",
+                    "Friendliness"
+                ]
+            },
+            "chairman": "Professor Pomona Sprout",
+            "history": "Founded by Helga Hufflepuff, this house values dedication, patience, and fair play. The Sorting Hat sees loyalty and hard work as the defining traits of Hufflepuffs, known for their kindness and inclusivity."
+        },
+        "additionalProperties": {
+            "mascot": "Badger",
+            "colors": ["Yellow", "Black"]
+        }
     },
     {
         "id": 4,
         "name": "Slytherin",
+        "segmentName": "Magical House",
         "about": "Slytherin, shrouded in an air of mystery, is the house for the ambitious and cunning. They value leadership, resourcefulness, and a determination to achieve their goals. Their colors, emerald green and sleek silver, represent a thirst for power and a strategic mind. The serpent, a symbol of both wisdom and potential danger, is their mascot.",
         "images": {
             "drawingRooms": [
@@ -104,16 +147,29 @@
                 "/images/Slytherin/Bathrooms/Gemini_Generated_Image_s9sojes9sojes9so.jpg"
             ]
         },
-        "roomsCount" : {
-            "drawingRooms" : 2,
-            "bedrooms": 2,
-            "bathrooms": 2
-        },
-        "price" : 7000,
+        "price": 700,
         "status": "Rent",
         "area": 2800,
         "location": "Hogwarts, Wizarding World",
-        "facilities" : [ "living room", "swimming pool",
-        "Kitchen"]
+        "facilities": ["Tower Room", "Dungeons", "Common Room"],
+        "propertyDetails": {
+            "purpose": "To nurture ambitious and cunning wizards.",
+            "residents": {
+                "description": "Slytherins are known for their ambition, cunning, and strong leadership qualities. They are resourceful and determined to achieve their goals, often using their cleverness to their advantage. Slytherins value self-preservation and are willing to do whatever it takes to succeed.",
+                "characteristics": [
+                    "Ambition",
+                    "Cunning",
+                    "Leadership",
+                    "Resourcefulness",
+                    "Determination"
+                ]
+            },
+            "chairman": "Professor Severus Snape",
+            "history": "Founded by Salazar Slytherin, known for his cunning and ambition, Slytherin house values ambition, leadership, and resourcefulness. The Sorting Hat values these traits in Slytherins, who are known for their strong will and determination."
+        },
+        "additionalProperties": {
+            "mascot": "Serpent",
+            "colors": ["Emerald Green", "Sleek Silver"]
+        }
     }
 ]

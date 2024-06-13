@@ -6,6 +6,7 @@ import ContactUs from "../Pages/ContactUs/ContactUs";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/Sign Up/SignUp";
 import HouseDetails from "../Pages/HouseDetails/HouseDetails";
+import HouseInfo from "../Pages/HouseInfo/HouseInfo";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
         },
         {
           path: "/house/:id",
+          element: <HouseInfo></HouseInfo>
+        },
+        {
+          path: "/house/details/:id",
           element: <HouseDetails></HouseDetails>
         },
         {
