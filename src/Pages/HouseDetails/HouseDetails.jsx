@@ -23,9 +23,6 @@ function HouseDetails() {
         setHouse(currentHouse)
     }, [houses])
 
-    console.log(houses)
-    console.log(house?.images.drawingRooms)
-
     return <>
         <div className="flex flex-col md:flex-row gap-14 mx-5 mb-14 lg:mx-32">
             <div className="flex flex-col items-center">
@@ -69,9 +66,8 @@ function HouseDetails() {
                 </div>
             </div>
         </div>
-        <hr className="my-3 mx-5 md:mx-14 lg:mx-32" />
-        <div className="mx-5 md:mx-14 lg:mx-32">
-            <h3 className="text-3xl font-bold mb-3">Additional Info:</h3>
+        <div className="mx-5 md:mx-14 lg:mx-32 mb-14">
+            <h3 className="text-3xl font-bold mb-5">Additional Info:</h3>
             <table className="border w-full font-semibold">
                 <tr>
                     <th></th>
@@ -91,14 +87,15 @@ function HouseDetails() {
                         {house?.propertyDetails.residents.characteristics.map((x, index) => <div className="badge font-semibold badge-lg badge-accent badge-outline" key={index}>{x}</div>)}
                     </td>
                 </tr>
+                <tr className="mb-3 border-b">
+                    <td className="px-5">Chairman:</td>
+                    <td className="py-5">{house?.propertyDetails.chairman}</td>
+                </tr>
+                <tr className="mb-3 border-b">
+                    <td className="px-5">History:</td>
+                    <td className="py-5">{house?.propertyDetails.history}</td>
+                </tr>
             </table>
-            {/* <hr className="my-3"/>
-            <p className="text-xl font-semibold">Purpose: {house?.propertyDetails.purpose}</p>
-            <hr className="my-3"/>
-            <p className="text-xl font-semibold">About Residents: {house?.propertyDetails.residents.description}</p>
-            <hr className="my-3"/>
-
-            <hr className="my-3"/> */}
         </div>
     </>
 }

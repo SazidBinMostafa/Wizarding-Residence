@@ -13,6 +13,7 @@ function Header() {
     const NavLinks = () => {
         return <>
             <li><NavLink className="bg-gray-100" to='/'>Home</NavLink></li>
+            <li><NavLink className="bg-gray-100" to='/residence'>Residence</NavLink></li>
             <li><NavLink className="bg-gray-100" to='/about'>About</NavLink></li>
             <li><NavLink className="bg-gray-100" to='/contact-us'>Contact Us</NavLink></li>
         </>

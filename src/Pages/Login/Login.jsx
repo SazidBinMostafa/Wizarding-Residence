@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 function Login() {
@@ -8,6 +8,8 @@ function Login() {
     const [password, setPassword] = useState(null);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
+    const location = useLocation()
+    const previousLocation = location.state;
 
     const { loginUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
 
@@ -24,7 +26,7 @@ function Login() {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(() => {
-                navigate('/')
+                navigate(previousLocation ? previousLocation : '/')
                 setError(null)
             })
             .catch(err => setError(err.message))
@@ -32,8 +34,11 @@ function Login() {
 
     const handleGithubSignIn = () => {
         signInWithGithub()
-            .then(res => console.log(res))
-            .catch(error => console.log(error))
+            .then(() => {
+                navigate(previousLocation ? previousLocation : '/')
+                setError(null)
+            })
+            .catch(err => setError(err.message))
     }
 
 
@@ -41,7 +46,7 @@ function Login() {
         e.preventDefault()
         loginUser(email, password)
             .then(() => {
-                navigate('/')
+                navigate(previousLocation ? previousLocation : '/')
                 e.target.reset();
                 setError(null)
             })

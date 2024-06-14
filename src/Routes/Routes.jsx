@@ -7,6 +7,8 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/Sign Up/SignUp";
 import HouseDetails from "../Pages/HouseDetails/HouseDetails";
 import HouseInfo from "../Pages/HouseInfo/HouseInfo";
+import PrivateRoute from "./PrivateRoute";
+import Residence from "../Pages/Residence/Residence";
 
 const router = createBrowserRouter([
     {
@@ -23,7 +25,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/house/details/:id",
-          element: <HouseDetails></HouseDetails>
+          element: <PrivateRoute><HouseDetails></HouseDetails></PrivateRoute>
         },
         {
             path: "/login",
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
         {
             path: "/about",
             element: <About></About>
+        },
+        {
+            path: "/residence",
+            element: <Residence></Residence>
         },
         {
             path: "/contact-us",
