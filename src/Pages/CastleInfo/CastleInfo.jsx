@@ -21,6 +21,12 @@ function CastleInfo() {
         setHouse(currentHouse)
     }, [houses])
 
+    useEffect(()=>{
+        if(house){
+            document.title = `${house.name} Info - Wizarding Castle`
+        }
+    },[house])
+
     return <>
         <div className="flex flex-col md:flex-row gap-14 mx-5 mb-14 lg:mx-32">
             <div className="w-full">

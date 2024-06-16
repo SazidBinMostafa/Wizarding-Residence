@@ -8,6 +8,7 @@ export const AuthContext = createContext(null)
 function AuthProvider({children}){
 
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true)
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
 
@@ -41,6 +42,7 @@ function AuthProvider({children}){
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             if (currentUser ) {
                 setUser(currentUser)
+                setLoading(false)
             } 
             else {
               setUser(null)
@@ -51,6 +53,7 @@ function AuthProvider({children}){
 
     const authInfo = {
         user,
+        loading,
         createUser,
         updateName,
         signInWithGoogle,

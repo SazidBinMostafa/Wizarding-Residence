@@ -23,6 +23,12 @@ function CastleDetails() {
         setHouse(currentHouse)
     }, [houses])
 
+    useEffect(()=>{
+        if(house){
+            document.title = `${house.name} - Wizarding Castle`
+        }
+    },[house])
+
     return <>
 
         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
