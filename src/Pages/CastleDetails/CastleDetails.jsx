@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Carousel from "../../Components/Carousel";
 
 
-function HouseDetails() {
+function CastleDetails() {
 
     const [house, setHouse] = useState(null);
     const [houses, setHouses] = useState([])
@@ -24,6 +24,22 @@ function HouseDetails() {
     }, [houses])
 
     return <>
+
+        <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+            <div className="modal-box">
+                <img
+                    src="/Owl.png"
+                    alt="Owl delivering message"
+                    className="w-96 border mx-auto"
+                />
+                <h3 className="font-bold text-xl text-center mt-5">Your request has been submitted.</h3>
+                <div className="modal-action">
+                    <form method="dialog">
+                        <button className="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
         <div className="flex flex-col md:flex-row gap-14 mx-5 mb-14 lg:mx-32">
             <div className="flex flex-col items-center">
                 <div className="flex mb-5">
@@ -62,7 +78,7 @@ function HouseDetails() {
                 <hr className="my-3" />
                 <div className="flex flex-wrap gap-5 items-center justify-center md:justify-start">
                     <h3 className="text-3xl font-semibold">Rent: {house?.price}$/month</h3>
-                    <button className="btn btn-outline px-8">Rent</button>
+                    <button onClick={() => document.getElementById('my_modal_5').showModal()} className="btn btn-outline px-8">Rent</button>
                 </div>
             </div>
         </div>
@@ -100,4 +116,4 @@ function HouseDetails() {
     </>
 }
 
-export default HouseDetails;
+export default CastleDetails;

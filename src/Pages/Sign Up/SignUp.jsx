@@ -1,25 +1,38 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 
 function SignUp() {
+    const {user} = useContext(AuthContext);
     const [name, setName] = useState(null);
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
+    const location = useLocation();
+    const previousLocation = location.state;
     const { createUser, updateName, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+
+    console.log(location)
+
+    useEffect(()=>{
+        document.title = "Sign Up - Wizarding Castle";
+    },[])
+
+    if(user){
+        return <Navigate to='/'></Navigate>
+    }
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
-            .then(res => console.log(res))
+            .then(() => navigate(previousLocation ? previousLocation : '/'))
             .catch(error => console.log(error))
     }
 
     const handleGithubSignIn = () => {
         signInWithGithub()
-            .then(res => console.log(res))
+            .then(() => navigate(previousLocation ? previousLocation : '/'))
             .catch(error => console.log(error))
     }
 
@@ -43,7 +56,7 @@ function SignUp() {
         e.preventDefault()
         createUser(email, password)
             .then(() => {
-                navigate('/')
+                navigate(previousLocation ? previousLocation : '/')
                 e.target.reset();
                 setError(null)
                 updateName(name)

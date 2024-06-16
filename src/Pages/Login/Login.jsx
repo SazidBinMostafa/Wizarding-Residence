@@ -1,17 +1,29 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 function Login() {
+    const {user} = useContext(AuthContext);
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
-    const location = useLocation()
+    const location = useLocation();
     const previousLocation = location.state;
 
+    console.log(location)
+    
     const { loginUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+
+    useEffect(()=>{
+        document.title = "Login - Wizarding Castle";
+    },[])
+
+    if(user){
+        return <Navigate to='/'></Navigate>
+    }
+
 
     const handleEmail = (e) => {
         const emailInput = e.target.value;
@@ -87,7 +99,7 @@ function Login() {
                 <div className="form-control mt-6">
                     <button className="btn btn-neutral">Login</button>
                 </div>
-                <p>New here? <Link className="text-blue-800" to="/sign-up">Sign up now!</Link></p>
+                <p>New here? <Link state={previousLocation} className="text-blue-800" to="/sign-up">Sign up now!</Link></p>
             </form>
             <div className="flex items-center">
                 <hr className="w-full" /><span className="mx-5">or</span> <hr className="w-full" />

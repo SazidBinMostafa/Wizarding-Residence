@@ -5,52 +5,65 @@ import About from "../Pages/About/About";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/Sign Up/SignUp";
-import HouseDetails from "../Pages/HouseDetails/HouseDetails";
-import HouseInfo from "../Pages/HouseInfo/HouseInfo";
+import CastleDetails from "../Pages/CastleDetails/CastleDetails";
+import CastleInfo from "../Pages/CastleInfo/CastleInfo";
 import PrivateRoute from "./PrivateRoute";
-import Residence from "../Pages/Residence/Residence";
+import Castle from "../Pages/Castle/Castle";
+import Profile from "../Pages/Profile/Profile";
+import Settings from "../Pages/Settings/Settings";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <App></App>,
-      children: [
-        {
-          path: "/",
-          element: <Home></Home>
-        },
-        {
-          path: "/house/:id",
-          element: <HouseInfo></HouseInfo>
-        },
-        {
-          path: "/house/details/:id",
-          element: <PrivateRoute><HouseDetails></HouseDetails></PrivateRoute>
-        },
-        {
-            path: "/login",
-            element: <Login></Login>
-        },
-        {
-            path: "/sign-up",
-            element: <SignUp></SignUp>
-        },
-        {
-            path: "/about",
-            element: <About></About>
-        },
-        {
-            path: "/residence",
-            element: <Residence></Residence>
-        },
-        {
-            path: "/contact-us",
-            element: <ContactUs></ContactUs>
-        }
-      ]
-    },
-    
-  ])
+  {
+    path: "/",
+    element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
+      {
+        path: "/castle/:id",
+        element: <CastleInfo></CastleInfo>
+      },
+      {
+        path: "/castle/details/:id",
+        element: <PrivateRoute><CastleDetails></CastleDetails></PrivateRoute>
+      },
+      {
+        path: "/login",
+        element: <Login></Login>
+      },
+      {
+        path: "/sign-up",
+        element: <SignUp></SignUp>
+      },
+      {
+        path: "/castle",
+        element: <Castle></Castle>
+      },
+      {
+        path: "/about",
+        element: <About></About>
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs></ContactUs>
+      },
+      {
+        path: "/profile",
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>
+      },
+      {
+        path: "/settings",
+        element: <PrivateRoute><Settings></Settings></PrivateRoute>
+      }
+      
+    ]
+  },
+
+])
 
 
 export default router;

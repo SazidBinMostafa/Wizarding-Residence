@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "wizardingresidence"
-  }
+    "default": "wizardingcastle",
+    "wizardingcastle": "wizardingcastle"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

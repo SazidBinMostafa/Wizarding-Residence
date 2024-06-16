@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import Carousel from "../../Components/Carousel";
 
 
-function HouseInfo() {
+function CastleInfo() {
 
     const [house, setHouse] = useState(null);
     const [houses, setHouses] = useState([])
 
     const { id } = useParams();
 
-    const [activeTab, setActiveTab] = useState(1);
 
     useEffect(() => {
         fetch('/HousesDetails.json')
@@ -35,11 +33,11 @@ function HouseInfo() {
                 <p>{house?.about}</p>
                 <hr className="my-3" />
                 <div className="flex flex-wrap gap-5 items-center justify-center md:justify-start">
-                    <Link to={`/house/details/${id}`}><button className="btn btn-outline px-8">View Property</button></Link>
+                    <Link to={`/castle/details/${id}`}><button className="btn btn-outline px-8">View Property</button></Link>
                 </div>
             </div>
         </div>
     </>
 }
 
-export default HouseInfo;
+export default CastleInfo;
